@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oslo Quantity</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+    }
+
+    h1 {
+        text-align: center;
+        color: #333;
+        margin-top: 20px;
+    }
+
+    #output {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    p {
+        margin: 10px 0;
+        font-size: 16px;
+        color: #555;
+    }
+</style>
+</head>
+<body>
+
+<h1>Outland Oslo Lorcana Stock:</h1>
+
+<div id="output"></div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const productNumbers = [676675, 676663, 676678, 676681];
+    const baseUrl = "https://www.outland.no/rest/V1/clickandcollect/storesInfo?productId=";
+
+    const outputDiv = document.getElementById("output");
+
+    productNumbers.forEach(productNumber => {
+        const url = `https://corsproxy.io/?${encodeURIComponent(baseUrl+productNumber)}`;
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                const osloObject = data.find(item => item.name === "Oslo");
+                if (osloObject) {
+                    const quantity = osloObject.qty;
+                    const productName = getProductTitle(productNumber);
+                    outputDiv.innerHTML += `<p>${productName}: ${quantity}</p>`;
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
+    });
+
+    function getProductTitle(productNumber) {
+        switch (productNumber) {
+            case 676675:
+                return "First chapter packs";
+            case 676663:
+                return "Rise packs";
+            case 676678:
+                return "First chapter boxes";
+            case 676681:
+                return "Rise boxes";
+            default:
+                return "Unknown product";
+        }
+    }
+});
+</script>
+
+</body>
+</html>
