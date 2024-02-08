@@ -48,7 +48,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const outputDiv = document.getElementById("output");
 
     productNumbers.forEach(productNumber => {
-        const url = `https://corsproxy.io/?${encodeURIComponent(baseUrl+productNumber)}`;
+        let random = '&_'+(Math.random() + 1).toString(36).substring(7);
+        const url = `https://corsproxy.io/?${encodeURIComponent(baseUrl+productNumber+random)}`;
         fetch(url)
             .then(response => response.json())
             .then(data => {
