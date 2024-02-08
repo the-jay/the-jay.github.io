@@ -42,7 +42,7 @@
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-    const productNumbers = [676675, 676663, 676678, 676681];
+    const productNumbers = [676675, 676663, 676678, 676681, 68282];
     const baseUrl = "https://www.outland.no/rest/V1/clickandcollect/storesInfo?productId=";
 
     const outputDiv = document.getElementById("output");
@@ -67,13 +67,15 @@ document.addEventListener("DOMContentLoaded", function() {
     function getProductTitle(productNumber) {
         switch (productNumber) {
             case 676675:
-                return "First chapter packs";
+                return "First Chapter Booster";
             case 676663:
-                return "Rise packs";
+                return "Floodborn Booster";
             case 676678:
-                return "First chapter boxes";
+                return "First Chapter Box";
             case 676681:
-                return "Rise boxes";
+                return "Floodborn Box";
+            case 68282:
+                return "Matte Black Dragon Shield";
             default:
                 return "Unknown product";
         }
