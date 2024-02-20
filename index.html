@@ -70,8 +70,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     products.forEach(product => {
         const randomString = '_' + (Math.random() + 1).toString(36).substring(7);
-        const packUrl = baseUrl + product.pack + '&_=' + randomString;
-        const boxUrl = baseUrl + product.box + '&_=' + randomString;
+        const packUrl = `https://corsproxy.io/?${encodeURIComponent(baseUrl + product.pack + '&_=' + randomString)}`;
+        const boxUrl = `https://corsproxy.io/?${encodeURIComponent(baseUrl + product.box + '&_=' + randomString)}`;
 
         Promise.all([
             fetch(packUrl).then(response => response.json()),
