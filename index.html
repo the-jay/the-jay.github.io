@@ -86,7 +86,11 @@ document.addEventListener("DOMContentLoaded", function() {
     .then(data => {
         // Filter out objects with no image
         images = data.filter(item => item.image);
-        loadProducts();
+        if (images.length > 0) {
+            loadProducts();
+        } else {
+            console.error('No images found in the data.');
+        }
     })
     .catch(error => {
         console.error('Error fetching images:', error);
