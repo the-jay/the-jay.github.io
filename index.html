@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function() {
             products.forEach(product => {
                 const randomIndex = Math.floor(Math.random() * data.length);
                 const randomCard = data[randomIndex];
-                const randomImageUrl = randomCard.image;
+                const randomImageUrl = randomCard.Image;
 
                 const randomString = '_' + (Math.random() + 1).toString(36).substring(7);
                 const packUrl = `https://corsproxy.io/?${encodeURIComponent(baseUrl + product.pack + '&_=' + randomString)}`;
