@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Oslo Quantity</title>
+<title>Outland Oslo Lorcana Stock</title>
 <style>
     body {
         font-family: Arial, sans-serif;
@@ -12,33 +12,49 @@
         background-color: #f4f4f4;
     }
 
-    h1 {
-        text-align: center;
-        color: #333;
-        margin-top: 20px;
-    }
-
-    #output {
-        max-width: 600px;
-        margin: 0 auto;
-        padding: 20px;
+    .card {
+        width: 200px;
+        height: 300px;
         background-color: #fff;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin: 20px;
+        padding: 20px;
+        display: inline-block;
+        position: relative;
     }
 
-    p {
-        margin: 10px 0;
-        font-size: 16px;
-        color: #555;
+    .card img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-bottom: 10px;
+    }
+
+    .card .name {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .card .qty {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 14px;
+        background-color: #fff;
+        padding: 5px 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
     }
 </style>
 </head>
 <body>
 
-<h1>Outland Oslo Lorcana Stock:</h1>
+<h1 style="text-align: center; color: #333; margin-top: 20px;">Outland Oslo Lorcana Stock</h1>
 
-<div id="output"></div>
+<div id="output" style="text-align: center;"></div>
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
@@ -46,22 +62,26 @@ document.addEventListener("DOMContentLoaded", function() {
         {
             name: 'The First Chapter',
             pack: 676675,
-            box: 676678
+            box: 676678,
+            image: 'https://via.placeholder.com/150' // Example image URL
         },
         {
             name: 'Rise of the Floodborne',
             pack: 676663,
-            box: 676681
+            box: 676681,
+            image: 'https://via.placeholder.com/150' // Example image URL
         },
         {
             name: 'Into the Inklands',
             pack: 675367,
-            box: 675394
+            box: 675394,
+            image: 'https://via.placeholder.com/150' // Example image URL
         },
         {
             name: 'Dragon Shield Matte Black',
             pack: 68282,
-            box: 68282
+            box: 68282,
+            image: 'https://via.placeholder.com/150' // Example image URL
         }
     ];
     const baseUrl = "https://www.outland.no/rest/V1/clickandcollect/storesInfo?productId=";
@@ -84,7 +104,14 @@ document.addEventListener("DOMContentLoaded", function() {
             let packQuantity = packOsloObject ? packOsloObject.qty : 'N/A';
             let boxQuantity = boxOsloObject ? boxOsloObject.qty : 'N/A';
 
-            outputDiv.innerHTML += `<p>${product.name}: Pack - ${packQuantity} / Box - ${boxQuantity}</p>`;
+            const card = `
+                <div class="card">
+                    <img src="${product.image}" alt="${product.name}">
+                    <div class="qty">Pack: ${packQuantity} / Box: ${boxQuantity}</div>
+                    <div class="name">${product.name}</div>
+                </div>
+            `;
+            outputDiv.innerHTML += card;
         })
         .catch(error => {
             console.error('Error fetching data:', error);
