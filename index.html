@@ -42,45 +42,54 @@
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-    const productNumbers = [676675, 676663, 676678, 676681, 68282];
+    const products = [
+        {
+            name: 'The First Chapter',
+            pack: 676675,
+            box: 676678
+        },
+        {
+            name: 'Rise of the Floodborne',
+            pack: 676663,
+            box: 676681
+        },
+        {
+            name: 'Into the Inklands',
+            pack: 675367,
+            box: 675394
+        },
+        {
+            name: 'Dragon Shield Matte Black',
+            pack: 68282,
+            box: 68282
+        }
+    ];
     const baseUrl = "https://www.outland.no/rest/V1/clickandcollect/storesInfo?productId=";
 
     const outputDiv = document.getElementById("output");
 
-    productNumbers.forEach(productNumber => {
-        let random = '&_'+(Math.random() + 1).toString(36).substring(7);
-        const url = `https://corsproxy.io/?${encodeURIComponent(baseUrl+productNumber+random)}`;
-        fetch(url)
-            .then(response => response.json())
-            .then(data => {
-                const osloObject = data.find(item => item.name === "Oslo");
-                if (osloObject) {
-                    const quantity = osloObject.qty;
-                    const productName = getProductTitle(productNumber);
-                    outputDiv.innerHTML += `<p>${productName}: ${quantity}</p>`;
-                }
-            })
-            .catch(error => {
-                console.error('Error fetching data:', error);
-            });
-    });
+    products.forEach(product => {
+        const randomString = '_' + (Math.random() + 1).toString(36).substring(7);
+        const packUrl = baseUrl + product.pack + '&_=' + randomString;
+        const boxUrl = baseUrl + product.box + '&_=' + randomString;
 
-    function getProductTitle(productNumber) {
-        switch (productNumber) {
-            case 676675:
-                return "First Chapter Booster";
-            case 676663:
-                return "Floodborn Booster";
-            case 676678:
-                return "First Chapter Box";
-            case 676681:
-                return "Floodborn Box";
-            case 68282:
-                return "Matte Black Dragon Shield";
-            default:
-                return "Unknown product";
-        }
-    }
+        Promise.all([
+            fetch(packUrl).then(response => response.json()),
+            fetch(boxUrl).then(response => response.json())
+        ])
+        .then(([packData, boxData]) => {
+            const packOsloObject = packData.find(item => item.name === "Oslo");
+            const boxOsloObject = boxData.find(item => item.name === "Oslo");
+
+            let packQuantity = packOsloObject ? packOsloObject.qty : 'N/A';
+            let boxQuantity = boxOsloObject ? boxOsloObject.qty : 'N/A';
+
+            outputDiv.innerHTML += `<p>${product.name}: Pack - ${packQuantity} / Box - ${boxQuantity}</p>`;
+        })
+        .catch(error => {
+            console.error('Error fetching data:', error);
+        });
+    });
 });
 </script>
 
