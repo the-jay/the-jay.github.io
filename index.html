@@ -129,8 +129,13 @@ document.addEventListener("DOMContentLoaded", function() {
             let boxQuantity = boxOsloObject ? boxOsloObject.qty : 'N/A';
 
             // Choose a random image
-            const randomIndex = Math.floor(Math.random() * images.length);
-            const imageUrl = images[randomIndex].Image;
+            let randomIndex = Math.floor(Math.random() * images.length);
+            let imageUrl = images[randomIndex].Image;
+            while (!imageUrl) {
+                
+            randomIndex = Math.floor(Math.random() * images.length);
+            imageUrl = images[randomIndex].Image;
+            }
 
             // Create a card element
             const card = document.createElement("div");
