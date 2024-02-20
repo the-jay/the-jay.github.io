@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function() {
     .then(response => response.json())
     .then(data => {
         // Filter out objects with no image
-        images = data.filter(item => item.Image);
+        images = data.filter(item => item.Image && item.Image != 'placeholder');
         if (images.length > 0) {
             products.forEach(product => {
                 loadProduct(product);
@@ -124,11 +124,6 @@ document.addEventListener("DOMContentLoaded", function() {
             // Choose a random image
             let randomIndex = Math.floor(Math.random() * images.length);
             let imageUrl = images[randomIndex].Image;
-            while (!imageUrl) {
-                
-            randomIndex = Math.floor(Math.random() * images.length);
-            imageUrl = images[randomIndex].Image;
-            }
 
             // Create a card element
             const card = document.createElement("div");
