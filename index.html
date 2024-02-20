@@ -3,52 +3,49 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Oslo Quantity Trading Cards</title>
+<title>Outland Oslo Lorcana Stock</title>
 <style>
     body {
         font-family: Arial, sans-serif;
         margin: 0;
         padding: 0;
         background-color: #f4f4f4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
     }
 
     .card {
-        width: 200px;
-        height: 300px;
-        border: 1px solid #ccc;
+        width: 250px;
+        height: 350px;
+        background-color: #fff;
         border-radius: 10px;
-        margin: 20px;
-        display: inline-block;
-        background-size: cover;
-        background-position: center;
-        position: relative;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        margin: 10px;
     }
 
-    .card-content {
-        position: absolute;
-        bottom: 10px;
-        left: 10px;
-        right: 10px;
-        color: white;
+    .card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
     }
 
-    .card-title {
-        font-size: 20px;
-        font-weight: bold;
-        margin-bottom: 10px;
-    }
-
-    .card-quantity {
-        font-size: 16px;
-        text-align: right;
+    .card .info {
+        text-align: center;
     }
 </style>
 </head>
 <body>
 
-<h1 style="text-align:center;">Outland Oslo Lorcana Stock Trading Cards:</h1>
-
-<div id="output"></div>
+<div id="output" class="container"></div>
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
@@ -74,61 +71,57 @@ document.addEventListener("DOMContentLoaded", function() {
             box: 68282
         }
     ];
-    const baseUrl = "https://www.outland.no/rest/V1/clickandcollect/storesInfo?productId=";
-
+    
     const outputDiv = document.getElementById("output");
 
-    fetch("https://api.lorcana-api.com/cards/all")
-        .then(response => response.json())
-        .then(data => {
-            products.forEach(product => {
-                const randomIndex = Math.floor(Math.random() * data.length);
-                const randomCard = data[randomIndex];
-                const randomImageUrl = randomCard.Image;
+    products.forEach(product => {
+        const randomString = '_' + (Math.random() + 1).toString(36).substring(7);
+        const packUrl = `https://corsproxy.io/?https://www.outland.no/rest/V1/clickandcollect/storesInfo?productId=${product.pack}&_=${randomString}`;
+        const boxUrl = `https://corsproxy.io/?https://www.outland.no/rest/V1/clickandcollect/storesInfo?productId=${product.box}&_=${randomString}`;
 
-                const randomString = '_' + (Math.random() + 1).toString(36).substring(7);
-                const packUrl = `https://corsproxy.io/?${encodeURIComponent(baseUrl + product.pack + '&_=' + randomString)}`;
-                const boxUrl = `https://corsproxy.io/?${encodeURIComponent(baseUrl + product.box + '&_=' + randomString)}`;
+        Promise.all([
+            fetch(packUrl).then(response => response.json()),
+            fetch(boxUrl).then(response => response.json())
+        ])
+        .then(([packData, boxData]) => {
+            const packOsloObject = packData.find(item => item.name === "Oslo");
+            const boxOsloObject = boxData.find(item => item.name === "Oslo");
 
-                Promise.all([
-                    fetch(packUrl).then(response => response.json()),
-                    fetch(boxUrl).then(response => response.json())
-                ])
-                .then(([packData, boxData]) => {
-                    const packOsloObject = packData.find(item => item.name === "Oslo");
-                    const boxOsloObject = boxData.find(item => item.name === "Oslo");
+            let packQuantity = packOsloObject ? packOsloObject.qty : 'N/A';
+            let boxQuantity = boxOsloObject ? boxOsloObject.qty : 'N/A';
+            
+            // Fetch a random image from the API
+            fetch("https://api.lorcana-api.com/cards/all")
+            .then(response => response.json())
+            .then(data => {
+                // Check if there is an actual image in the object
+                let randomIndex = Math.floor(Math.random() * data.length);
+                while (!data[randomIndex].image) {
+                    randomIndex = Math.floor(Math.random() * data.length);
+                }
+                const imageUrl = data[randomIndex].image;
 
-                    let packQuantity = packOsloObject ? packOsloObject.qty : 'N/A';
-                    let boxQuantity = boxOsloObject ? boxOsloObject.qty : 'N/A';
-
-                    const cardDiv = document.createElement('div');
-                    cardDiv.classList.add('card');
-                    cardDiv.style.backgroundImage = `url(${randomImageUrl})`;
-
-                    const cardContentDiv = document.createElement('div');
-                    cardContentDiv.classList.add('card-content');
-
-                    const cardTitleDiv = document.createElement('div');
-                    cardTitleDiv.classList.add('card-title');
-                    cardTitleDiv.textContent = product.name;
-
-                    const cardQuantityDiv = document.createElement('div');
-                    cardQuantityDiv.classList.add('card-quantity');
-                    cardQuantityDiv.innerHTML = `Pack: ${packQuantity} / Box: ${boxQuantity}`;
-
-                    cardContentDiv.appendChild(cardTitleDiv);
-                    cardContentDiv.appendChild(cardQuantityDiv);
-                    cardDiv.appendChild(cardContentDiv);
-                    outputDiv.appendChild(cardDiv);
-                })
-                .catch(error => {
-                    console.error('Error fetching data:', error);
-                });
+                // Create a card element
+                const card = document.createElement("div");
+                card.classList.add("card");
+                card.innerHTML = `
+                    <img src="${imageUrl}" alt="${product.name} artwork">
+                    <div class="info">
+                        <h3>${product.name}</h3>
+                        <p>Power: ${packQuantity}</p>
+                        <p>Health: ${boxQuantity}</p>
+                    </div>
+                `;
+                outputDiv.appendChild(card);
+            })
+            .catch(error => {
+                console.error('Error fetching image:', error);
             });
         })
         .catch(error => {
-            console.error('Error fetching card data:', error);
+            console.error('Error fetching data:', error);
         });
+    });
 });
 </script>
 
