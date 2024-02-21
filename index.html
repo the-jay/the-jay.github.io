@@ -148,7 +148,11 @@ document.addEventListener("DOMContentLoaded", function() {
         ])
         .then(([packData, boxData]) => {
             const packOsloObject = packData.find(item => item.name === "Oslo");
-            const boxOsloObject = boxData.find(item => item.name === "Oslo");
+            let boxOsloObject = boxData.find(item => item.name === "Oslo");
+
+            if (product.box == 68282) {
+                boxOsloObject = boxData.find(item => item.name === "Jessheim");
+            }
 
             let packQuantity = packOsloObject ? packOsloObject.qty : 'N/A';
             let boxQuantity = boxOsloObject ? boxOsloObject.qty : 'N/A';
