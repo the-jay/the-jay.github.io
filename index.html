@@ -52,10 +52,31 @@
     h3 {
         margin:0 0 1.2em;
     }
+    
     @media only screen and (max-device-width: 360px) {
     .card {
-        width: calc(50% - 10px); /* 50% width with no margin */
+        width: calc(100%); /* 50% width with no margin */
+        HEIGHT: 120px;
+            margin:0;
     }
+        .card img {
+    width: 120%;
+    height: 100%;
+     object-position: top -20px left -20px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+        .card .info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px 10px 25px 10px;
+    border-radius: 0px;
+    box-sizing: border-box;
+}
 }
 
 </style>
@@ -138,8 +159,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 <img src="${imageUrl}" alt="${product.name} artwork">
                 <div class="info">
                     <h3>${product.name}</h3>
-                    <p style="margin: 0;">Booster: ${packQuantity}</p>
-                    <p style="margin: 0;">Display: ${boxQuantity}</p>
+                    <p style="margin: 0;">${packQuantity} / ${boxQuantity}</p>
                 </div>
             `;
             outputDiv.appendChild(card);
