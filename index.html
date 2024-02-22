@@ -135,9 +135,9 @@ document.addEventListener("DOMContentLoaded", function() {
         // Filter out objects with no image
         images = data.filter(item => item.Image && item.Image != 'placeholder');
         if (images.length > 0) {
-            products.forEach(product => {
-                await loadProduct(product);
-            });
+            return images.reduce((promise, product) => {
+                return promise.then(() => loadProduct(product));
+            }, Promise.resolve());
         } else {
             console.error('No images found in the data.');
         }
@@ -146,7 +146,7 @@ document.addEventListener("DOMContentLoaded", function() {
         console.error('Error fetching images:', error);
     });
 
-    async function loadProduct(product) {
+    function loadProduct(product) {
         const outputDiv = document.getElementById("output");
 
         const randomString = '_' + (Math.random() + 1).toString(36).substring(7);
