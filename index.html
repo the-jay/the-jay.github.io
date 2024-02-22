@@ -161,7 +161,7 @@ document.addEventListener("DOMContentLoaded", function() {
             let boxQuantity = boxOsloObject ? boxOsloObject.qty : 'N/A';
 
             if (product.set) {
-                images = images.filter(i => i.set == product.set);
+                images = images.filter(i => i.Set_Num == product.set);
             }
             // Choose a random image
             let randomIndex = Math.floor(Math.random() * images.length);
