@@ -96,17 +96,20 @@ document.addEventListener("DOMContentLoaded", function() {
         {
             name: 'The First Chapter',
             pack: 676675,
-            box: 676678
+            box: 676678,
+            set: 1
         },
         {
             name: 'Rise of the Floodborne',
             pack: 676663,
-            box: 676681
+            box: 676681,
+            set: 2
         },
         {
             name: 'Into the Inklands',
             pack: 675367,
-            box: 675394
+            box: 675394,
+            set: 3
         },
         {
             name: 'Dragon Shield',
@@ -159,7 +162,15 @@ document.addEventListener("DOMContentLoaded", function() {
 
             // Choose a random image
             let randomIndex = Math.floor(Math.random() * images.length);
-            let imageUrl = images[randomIndex].Image;
+            let image = images[randomIndex];
+
+            if (item.set) {
+                while(image.set != item.set) {
+                   randomIndex = Math.floor(Math.random() * images.length);
+                   image = images[randomIndex];
+                }
+            }
+            let imageUrl = image.Image;
 
             // Create a card element
             const card = document.createElement("div");
