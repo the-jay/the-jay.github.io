@@ -135,9 +135,10 @@ document.addEventListener("DOMContentLoaded", function() {
         // Filter out objects with no image
         images = data.filter(item => item.Image && item.Image != 'placeholder');
         if (images.length > 0) {
-            return images.reduce((promise, product) => {
-                return promise.then(() => loadProduct(product));
-            }, Promise.resolve());
+            let chain = Promise.resolve();
+            images.forEach(product => {
+                chain = chain.then(() => loadProduct(product));
+            });
         } else {
             console.error('No images found in the data.');
         }
