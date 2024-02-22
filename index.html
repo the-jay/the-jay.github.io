@@ -164,7 +164,7 @@ document.addEventListener("DOMContentLoaded", function() {
             let packQuantity = packOsloObject ? packOsloObject.qty : 'N/A';
             let boxQuantity = boxOsloObject ? boxOsloObject.qty : 'N/A';
             
-            let colImages = images.filter(i => i.color == product.Color);
+            let colImages = images.filter(i => i.Color == product.color);
             
             // Choose a random image
             let randomIndex = Math.floor(Math.random() * colImages.length);
