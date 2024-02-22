@@ -120,8 +120,9 @@ document.addEventListener("DOMContentLoaded", function() {
         },
         {
             name: 'Dragon Shield',
-            pack: 68282,
-            box: 68282,
+            black: 68282,
+            blue: 68283,
+            yellow: 33232,
             color: 'Steel'
         }
     ];
@@ -150,23 +151,24 @@ document.addEventListener("DOMContentLoaded", function() {
         const outputDiv = document.getElementById("output");
 
         const randomString = '_' + (Math.random() + 1).toString(36).substring(7);
-        const packUrl = `https://corsproxy.io/?https://www.outland.no/rest/V1/clickandcollect/storesInfo?productId=${product.pack}&_=${randomString}`;
-        const boxUrl = `https://corsproxy.io/?https://www.outland.no/rest/V1/clickandcollect/storesInfo?productId=${product.box}&_=${randomString}`;
+        if (product.black) {
+            const blackUrl = `https://corsproxy.io/?https://www.outland.no/rest/V1/clickandcollect/storesInfo?productId=${product.black}&_=${randomString}`;
+            const blueUrl = `https://corsproxy.io/?https://www.outland.no/rest/V1/clickandcollect/storesInfo?productId=${product.blue}&_=${randomString}`;
+            const yellowUrl = `https://corsproxy.io/?https://www.outland.no/rest/V1/clickandcollect/storesInfo?productId=${product.yellow}&_=${randomString}`;
 
         Promise.all([
-            fetch(packUrl).then(response => response.json()),
-            fetch(boxUrl).then(response => response.json())
+            fetch(blackUrl).then(response => response.json()),
+            fetch(blueUrl).then(response => response.json()),
+            fetch(yellowUrl).then(response => response.json())
         ])
-        .then(([packData, boxData]) => {
-            const packOsloObject = packData.find(item => item.name === "Oslo");
-            let boxOsloObject = boxData.find(item => item.name === "Oslo");
+        .then(([blackData, blueData, yellowData]) => {
+            const blackObject = packData.find(item => item.name === "Oslo");
+            let blueObject = boxData.find(item => item.name === "Oslo");
+            let yellowObject = boxData.find(item => item.name === "Oslo");
 
-            if (product.box == 68282) {
-                boxOsloObject = boxData.find(item => item.name === "Jessheim");
-            }
-
-            let packQuantity = packOsloObject ? packOsloObject.qty : 'N/A';
-            let boxQuantity = boxOsloObject ? boxOsloObject.qty : 'N/A';
+            let blackQuantity = packOsloObject ? packOsloObject.qty : 'N/A';
+            let blueQuantity = boxOsloObject ? boxOsloObject.qty : 'N/A';
+            let yellowQuantity = boxOsloObject ? boxOsloObject.qty : 'N/A';
             
             let colImages = images.filter(i => i.Color == product.color);
             
@@ -189,6 +191,44 @@ document.addEventListener("DOMContentLoaded", function() {
         .catch(error => {
             console.error('Error fetching data:', error);
         });
+        }
+        else{
+        const packUrl = `https://corsproxy.io/?https://www.outland.no/rest/V1/clickandcollect/storesInfo?productId=${product.pack}&_=${randomString}`;
+        const boxUrl = `https://corsproxy.io/?https://www.outland.no/rest/V1/clickandcollect/storesInfo?productId=${product.box}&_=${randomString}`;
+
+        Promise.all([
+            fetch(packUrl).then(response => response.json()),
+            fetch(boxUrl).then(response => response.json())
+        ])
+        .then(([packData, boxData]) => {
+            const packOsloObject = packData.find(item => item.name === "Oslo");
+            let boxOsloObject = boxData.find(item => item.name === "Oslo");
+
+            let packQuantity = packOsloObject ? packOsloObject.qty : 'N/A';
+            let boxQuantity = boxOsloObject ? boxOsloObject.qty : 'N/A';
+            
+            let colImages = images.filter(i => i.Color == product.color);
+            
+            // Choose a random image
+            let randomIndex = Math.floor(Math.random() * colImages.length);
+            let imageUrl = colImages[randomIndex].Image;
+
+            // Create a card element
+            const card = document.createElement("div");
+            card.classList.add("card");
+            card.innerHTML = `
+                <img src="${imageUrl}" alt="${product.name} artwork">
+                <div class="info">
+                    <h3>${product.name}</h3>
+                    <p style="margin: 0;">Black:${blackQuantity} | Blue:${blueQuantity} | Yellow:${yellowQuantity}</p>
+                </div>
+            `;
+            outputDiv.appendChild(card);
+        })
+        .catch(error => {
+            console.error('Error fetching data:', error);
+        });
+        }
     }
 });
 </script>
