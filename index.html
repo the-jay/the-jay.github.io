@@ -97,19 +97,22 @@ document.addEventListener("DOMContentLoaded", function() {
             name: 'The First Chapter',
             pack: 676675,
             box: 676678,
-            set: 1
+            set: 1,
+            color: 'Ruby'
         },
         {
             name: 'Rise of the Floodborne',
             pack: 676663,
             box: 676681,
-            set: 2
+            set: 2,
+            color: 'Sapphire'
         },
         {
             name: 'Into the Inklands',
             pack: 675367,
             box: 675394,
-            set: 3
+            set: 3,
+            color: 'Amber'
         },
         {
             name: 'Dragon Shield',
@@ -160,12 +163,12 @@ document.addEventListener("DOMContentLoaded", function() {
             let packQuantity = packOsloObject ? packOsloObject.qty : 'N/A';
             let boxQuantity = boxOsloObject ? boxOsloObject.qty : 'N/A';
 
-            if (product.set) {
-                images = images.filter(i => i.Set_Num == product.set);
+            if (product.color) {
+                let colImages = images.filter(i => i.color == product.Color);
             }
             // Choose a random image
-            let randomIndex = Math.floor(Math.random() * images.length);
-            let imageUrl = images[randomIndex].Image;
+            let randomIndex = Math.floor(Math.random() * colImages.length);
+            let imageUrl = colImages[randomIndex].Image;
 
             // Create a card element
             const card = document.createElement("div");
