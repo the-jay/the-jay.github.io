@@ -117,7 +117,8 @@ document.addEventListener("DOMContentLoaded", function() {
         {
             name: 'Dragon Shield',
             pack: 68282,
-            box: 68282
+            box: 68282,
+            color: 'Steel'
         }
     ];
 
@@ -162,10 +163,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
             let packQuantity = packOsloObject ? packOsloObject.qty : 'N/A';
             let boxQuantity = boxOsloObject ? boxOsloObject.qty : 'N/A';
-
-            if (product.color) {
-                let colImages = images.filter(i => i.color == product.Color);
-            }
+            
+            let colImages = images.filter(i => i.color == product.Color);
+            
             // Choose a random image
             let randomIndex = Math.floor(Math.random() * colImages.length);
             let imageUrl = colImages[randomIndex].Image;
