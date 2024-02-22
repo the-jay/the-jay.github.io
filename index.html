@@ -1,242 +1,237 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Outland Oslo Lorcana Stock < /title>
-            <style>
-                @import url('//fonts.googleapis.com/css2?family=Bebas+Neue&family=Cabin+Condensed:wght@400;500;600;700&display=swap') body {
-                    font - family: Arial, sans - serif;
-                    margin: 0;
-                    padding: 0;
-                    background - color: #f4f4f4;
-                    display: flex;
-                    justify - content: center;
-                    align - items: center;
-                    height: 100vh;
-                }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Outland Oslo Lorcana Stock</title>
+<style>
+    @import url('//fonts.googleapis.com/css2?family=Bebas+Neue&family=Cabin+Condensed:wght@400;500;600;700&display=swap');
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
 
-                .card {
-                    width: 250px;
-                    height: 350px;
-                    background - color: #fff;
-                    border - radius: 10px;
-                    box - shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-                    display: inline - block;
-                    /* Display cards inline */
-                    vertical - align: top;
-                    /* Align cards to the top */
-                    margin: 10px;
-                    position: relative;
-                    box - sizing: border - box;
-                }
+   .card {
+    width: 250px;
+    height: 350px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: inline-block; /* Display cards inline */
+    vertical-align: top; /* Align cards to the top */
+    margin: 10px;
+    position: relative;
+    box-sizing: border-box;
+}
 
-                .card img {
-                    width: 100 %;
-                    height: 100 %;
-                    object - fit: cover;
-                    border - radius: 10px;
-                }
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
 
-                .card.info {
-                    font - family: "Bebas Neue", sans - serif;
-                    font - weight: 400;
-                    font - style: normal;
-                    position: absolute;
-                    bottom: 0;
-                    left: 0;
-                    width: 100 %;
-                    background - color: rgba(0, 0, 0, 0.8);
-                    color: white;
-                    padding: 10px 10px 45px 10px;
-                    border - bottom - left - radius: 10px;
-                    border - bottom - right - radius: 10px;
-                    box - sizing: border - box;
-                }
+.card .info {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px 10px 45px 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-sizing: border-box;
+}
 
-                h3 {
-                    margin: 0 0 1.2em;
-                }
+    h3 {
+        margin:0 0 1.2em;
+    }
+    
+    @media only screen and (max-device-width: 375px) {
+            body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px 0 0;
+        background-color: #f4f4f4;
+        display: block;
+                width:100%;
+    }
+    .card {
+        width: 100%; /* 50% width with no margin */
+        HEIGHT: 200px;
+            margin:0;
+    }
+        .card img {
+    width: 100%;
+    height: 100%;
+     object-position: top -80px left 0px;
+    object-fit: cover;
+    border-radius: 0px;
+}
+        .card .info {
+    height: 100%;
+    padding: 13px 20px 45px 20px;
+    background-color: rgba(0, 0, 0, 0);
+            text-shadow: 2px 2px 5px black;
+    border-radius: 0px;
+    box-sizing: border-box;
+}
+}
 
-                @media only screen and(max - device - width: 375px) {
-                    body {
-                        font - family: Arial, sans - serif;
-                        margin: 0;
-                        padding: 20px 0 0;
-                        background - color: #f4f4f4;
-                        display: block;
-                        width: 100 %;
-                    }
+</style>
+</head>
+<body>
 
-                    .card {
-                        width: 100 %;
-                        /* 50% width with no margin */
-                        HEIGHT: 200px;
-                        margin: 0;
-                    }
+<div id="output" class="container"></div>
 
-                    .card img {
-                        width: 100 %;
-                        height: 100 %;
-                        object - position: top - 80px left 0px;
-                        object - fit: cover;
-                        border - radius: 0px;
-                    }
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const products = [
+        {
+            name: 'The First Chapter',
+            pack: 676675,
+            box: 676678,
+            set: 1,
+            color: 'Ruby'
+        },
+        {
+            name: 'Rise of the Floodborne',
+            pack: 676663,
+            box: 676681,
+            set: 2,
+            color: 'Sapphire'
+        },
+        {
+            name: 'Into the Inklands',
+            pack: 675367,
+            box: 675394,
+            set: 3,
+            color: 'Amber'
+        },
+        {
+            name: 'Dragon Shield',
+            black: 68282,
+            blue: 68283,
+            yellow: 33232,
+            color: 'Steel'
+        }
+    ];
 
-                    .card.info {
-                        height: 100 %;
-                        padding: 13px 20px 45px 20px;
-                        background - color: rgba(0, 0, 0, 0);
-                        text - shadow: 2px 2px 5px black;
-                        border - radius: 0px;
-                        box - sizing: border - box;
-                    }
-                }
-            </style>
-            < /head>
-                < body>
+    let images;
+    let isLoading = false;
 
-                    <div id="output" class="container"> </div>
+    fetch("https://api.lorcana-api.com/cards/all")
+    .then(response => response.json())
+    .then(data => {
+        // Filter out objects with no image
+        images = data.filter(item => item.Image && item.Image != 'placeholder');
+        if (images.length > 0) {
+                products.forEach(product => {
+                    loadProduct(product);
+            });
+        } else {
+            console.error('No images found in the data.');
+        }
+    })
+    .catch(error => {
+        console.error('Error fetching images:', error);
+    });
 
-                    <script>
-                        document.addEventListener("DOMContentLoaded", function () {
-                            const products = [
-                                {
-                                    name: 'The First Chapter',
-                                    pack: 676675,
-                                    box: 676678,
-                                    set: 1,
-                                    color: 'Ruby'
-                                },
-                                {
-                                    name: 'Rise of the Floodborne',
-                                    pack: 676663,
-                                    box: 676681,
-                                    set: 2,
-                                    color: 'Sapphire'
-                                },
-                                {
-                                    name: 'Into the Inklands',
-                                    pack: 675367,
-                                    box: 675394,
-                                    set: 3,
-                                    color: 'Amber'
-                                },
-                                {
-                                    name: 'Dragon Shield',
-                                    black: 68282,
-                                    blue: 68283,
-                                    yellow: 33232,
-                                    color: 'Steel'
-                                }
-                            ];
+    function loadProduct(product) {
+        const outputDiv = document.getElementById("output");
 
-                            let images;
-                            let isLoading = false;
+        const randomString = '_' + (Math.random() + 1).toString(36).substring(7);
+        if (product.name == 'Dragon Shield') {
+            const blackUrl = `https://corsproxy.io/?https://www.outland.no/rest/V1/clickandcollect/storesInfo?productId=${product.black}&_=${randomString}`;
+            const blueUrl = `https://corsproxy.io/?https://www.outland.no/rest/V1/clickandcollect/storesInfo?productId=${product.blue}&_=${randomString}`;
+            const yellowUrl = `https://corsproxy.io/?https://www.outland.no/rest/V1/clickandcollect/storesInfo?productId=${product.yellow}&_=${randomString}`;
 
-                            fetch("https://api.lorcana-api.com/cards/all")
-                                .then(response => response.json())
-                                .then(data => {
-                                    // Filter out objects with no image
-                                    images = data.filter(item => item.Image && item.Image != 'placeholder');
-                                    if (images.length > 0) {
-                                        products.forEach(product => {
-                                            loadProduct(product);
-                                        });
-                                    } else {
-                                        console.error('No images found in the data.');
-                                    }
-                                })
-                                .catch(error => {
-                                    console.error('Error fetching images:', error);
-                                });
+        Promise.all([
+            fetch(blackUrl).then(response => response.json()),
+            fetch(blueUrl).then(response => response.json()),
+            fetch(yellowUrl).then(response => response.json())
+        ])
+        .then(([blackData, blueData, yellowData]) => {
+            let blackObject = blackData.find(item => item.name === "Oslo");
+            let blueObject = blueData.find(item => item.name === "Oslo");
+            let yellowObject = yellowData.find(item => item.name === "Oslo");
 
-                            function loadProduct(product) {
-                                const outputDiv = document.getElementById("output");
+            let blackQuantity = blackObject ? blackObject.qty : 'N/A';
+            let blueQuantity = blueObject ? blueObject.qty : 'N/A';
+            let yellowQuantity = yellowObject ? yellowObject.qty : 'N/A';
+            
+            let colImages = images.filter(i => i.Color == product.color);
+            
+            // Choose a random image
+            let randomIndex = Math.floor(Math.random() * colImages.length);
+            let imageUrl = colImages[randomIndex].Image;
 
-                                const randomString = '_' + (Math.random() + 1).toString(36).substring(7);
-                                if (product.name == 'Dragon Shield') {
-                                    const blackUrl = `https://corsproxy.io/?https://www.outland.no/rest/V1/clickandcollect/storesInfo?productId=${product.black}&_=${randomString}`;
-                                    const blueUrl = `https://corsproxy.io/?https://www.outland.no/rest/V1/clickandcollect/storesInfo?productId=${product.blue}&_=${randomString}`;
-                                    const yellowUrl = `https://corsproxy.io/?https://www.outland.no/rest/V1/clickandcollect/storesInfo?productId=${product.yellow}&_=${randomString}`;
-
-                                    Promise.all([
-                                        fetch(blackUrl).then(response => response.json()),
-                                        fetch(blueUrl).then(response => response.json()),
-                                        fetch(yellowUrl).then(response => response.json())
-                                    ])
-                                        .then(([blackData, blueData, yellowData]) => {
-                                            let blackObject = blackData.find(item => item.name === "Oslo");
-                                            let blueObject = blueData.find(item => item.name === "Oslo");
-                                            let yellowObject = yellowData.find(item => item.name === "Oslo");
-
-                                            let blackQuantity = blackObject ? blackObject.qty : 'N/A';
-                                            let blueQuantity = blueObject ? blueObject.qty : 'N/A';
-                                            let yellowQuantity = yellowObject ? yellowObject.qty : 'N/A';
-
-                                            let colImages = images.filter(i => i.Color == product.color);
-
-                                            // Choose a random image
-                                            let randomIndex = Math.floor(Math.random() * colImages.length);
-                                            let imageUrl = colImages[randomIndex].Image;
-
-                                            // Create a card element
-                                            const card = document.createElement("div");
-                                            card.classList.add("card");
-                                            card.innerHTML = `
+            // Create a card element
+            const card = document.createElement("div");
+            card.classList.add("card");
+            card.innerHTML = `
                 <img src="${imageUrl}" alt="${product.name} artwork">
                 <div class="info">
                     <h3>${product.name}</h3>
                     <p style="margin: 0;">Black:${blackQuantity} | Blue:${blueQuantity} | Yellow:${yellowQuantity}</p>
                 </div>
             `;
-                                            outputDiv.appendChild(card);
-                                        })
-                                        .catch(error => {
-                                            console.error('Error fetching data:', error);
-                                        });
-                                }
-                                else {
-                                    const packUrl = `https://corsproxy.io/?https://www.outland.no/rest/V1/clickandcollect/storesInfo?productId=${product.pack}&_=${randomString}`;
-                                    const boxUrl = `https://corsproxy.io/?https://www.outland.no/rest/V1/clickandcollect/storesInfo?productId=${product.box}&_=${randomString}`;
+            outputDiv.appendChild(card);
+        })
+        .catch(error => {
+            console.error('Error fetching data:', error);
+        });
+        }
+        else{
+        const packUrl = `https://corsproxy.io/?https://www.outland.no/rest/V1/clickandcollect/storesInfo?productId=${product.pack}&_=${randomString}`;
+        const boxUrl = `https://corsproxy.io/?https://www.outland.no/rest/V1/clickandcollect/storesInfo?productId=${product.box}&_=${randomString}`;
 
-                                    Promise.all([
-                                        fetch(packUrl).then(response => response.json()),
-                                        fetch(boxUrl).then(response => response.json())
-                                    ])
-                                        .then(([packData, boxData]) => {
-                                            const packOsloObject = packData.find(item => item.name === "Oslo");
-                                            let boxOsloObject = boxData.find(item => item.name === "Oslo");
+        Promise.all([
+            fetch(packUrl).then(response => response.json()),
+            fetch(boxUrl).then(response => response.json())
+        ])
+        .then(([packData, boxData]) => {
+            const packOsloObject = packData.find(item => item.name === "Oslo");
+            let boxOsloObject = boxData.find(item => item.name === "Oslo");
 
-                                            let packQuantity = packOsloObject ? packOsloObject.qty : 'N/A';
-                                            let boxQuantity = boxOsloObject ? boxOsloObject.qty : 'N/A';
+            let packQuantity = packOsloObject ? packOsloObject.qty : 'N/A';
+            let boxQuantity = boxOsloObject ? boxOsloObject.qty : 'N/A';
+            
+            let colImages = images.filter(i => i.Color == product.color);
+            
+            // Choose a random image
+            let randomIndex = Math.floor(Math.random() * colImages.length);
+            let imageUrl = colImages[randomIndex].Image;
 
-                                            let colImages = images.filter(i => i.Color == product.color);
-
-                                            // Choose a random image
-                                            let randomIndex = Math.floor(Math.random() * colImages.length);
-                                            let imageUrl = colImages[randomIndex].Image;
-
-                                            // Create a card element
-                                            const card = document.createElement("div");
-                                            card.classList.add("card");
-                                            card.innerHTML = `
+            // Create a card element
+            const card = document.createElement("div");
+            card.classList.add("card");
+            card.innerHTML = `
                 <img src="${imageUrl}" alt="${product.name} artwork">
                 <div class="info">
                     <h3>${product.name}</h3>
                     <p style="margin: 0;">${packQuantity} / ${boxQuantity}</p>
                 </div>
             `;
-                                            outputDiv.appendChild(card);
-                                        })
-                                        .catch(error => {
-                                            console.error('Error fetching data:', error);
-                                        });
-                                }
-                            }
-                        });
-                    </script>
+            outputDiv.appendChild(card);
+        })
+        .catch(error => {
+            console.error('Error fetching data:', error);
+        });
+        }
+    }
+});
+</script>
 
-                    < /body>
-                        < /html>
+</body>
+</html>
