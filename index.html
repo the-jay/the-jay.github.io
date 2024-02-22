@@ -162,13 +162,13 @@ document.addEventListener("DOMContentLoaded", function() {
             fetch(yellowUrl).then(response => response.json())
         ])
         .then(([blackData, blueData, yellowData]) => {
-            const blackObject = packData.find(item => item.name === "Oslo");
-            let blueObject = boxData.find(item => item.name === "Oslo");
-            let yellowObject = boxData.find(item => item.name === "Oslo");
+            const blackObject = blackData.find(item => item.name === "Oslo");
+            let blueObject = blueData.find(item => item.name === "Oslo");
+            let yellowObject = yellowData.find(item => item.name === "Oslo");
 
-            let blackQuantity = packOsloObject ? packOsloObject.qty : 'N/A';
-            let blueQuantity = boxOsloObject ? boxOsloObject.qty : 'N/A';
-            let yellowQuantity = boxOsloObject ? boxOsloObject.qty : 'N/A';
+            let blackQuantity = blackObject ? blackObject.qty : 'N/A';
+            let blueQuantity = blueObject ? blueObject.qty : 'N/A';
+            let yellowQuantity = yellowObject ? yellowObject.qty : 'N/A';
             
             let colImages = images.filter(i => i.Color == product.color);
             
