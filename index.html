@@ -160,17 +160,12 @@ document.addEventListener("DOMContentLoaded", function() {
             let packQuantity = packOsloObject ? packOsloObject.qty : 'N/A';
             let boxQuantity = boxOsloObject ? boxOsloObject.qty : 'N/A';
 
+            if (product.set) {
+                images = images.filter(i => i.set == product.set);
+            }
             // Choose a random image
             let randomIndex = Math.floor(Math.random() * images.length);
-            let image = images[randomIndex];
-
-            if (product.set) {
-                while(image.set != product.set) {
-                   randomIndex = Math.floor(Math.random() * images.length);
-                   image = images[randomIndex];
-                }
-            }
-            let imageUrl = image.Image;
+            let imageUrl = images[randomIndex].Image;
 
             // Create a card element
             const card = document.createElement("div");
