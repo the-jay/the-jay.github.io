@@ -124,7 +124,7 @@ document.addEventListener("DOMContentLoaded", function() {
         {
             name: 'Dragon Shield',
             black: 68282,
-            blue: 68283,
+            blue: 33208, //68283 matte
             yellow: 33232,
             color: 'Steel'
         }
@@ -168,10 +168,19 @@ document.addEventListener("DOMContentLoaded", function() {
             let blackObject = blackData.find(item => item.name === "Oslo");
             let blueObject = blueData.find(item => item.name === "Oslo");
             let yellowObject = yellowData.find(item => item.name === "Oslo");
+            
+            let jblackObject = blackData.find(item => item.name === "Jessheim");
+            let jblueObject = blueData.find(item => item.name === "Jessheim");
+            let jyellowObject = yellowData.find(item => item.name === "Jessheim");
 
             let blackQuantity = blackObject ? blackObject.qty : 'N/A';
             let blueQuantity = blueObject ? blueObject.qty : 'N/A';
             let yellowQuantity = yellowObject ? yellowObject.qty : 'N/A';
+
+            let jblackQuantity = jblackObject ? jblackObject.qty : 'N/A';
+            let jblueQuantity = jblueObject ? jblueObject.qty : 'N/A';
+            let jyellowQuantity = jyellowObject ? jyellowObject.qty : 'N/A';
+
             
             let colImages = images.filter(i => i.Color == product.color);
             
@@ -186,7 +195,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 <img src="${imageUrl}" alt="${product.name} artwork">
                 <div class="info">
                     <h3>${product.name}</h3>
-                    <p style="margin: 0;">Black: ${blackQuantity} | Blue: ${blueQuantity} | Yellow: ${yellowQuantity}</p>
+                    <p style="margin: 0;">Oslo: Black: ${blackQuantity} | Blue: ${blueQuantity} | Yellow: ${yellowQuantity}</br>
+                        Jess: Black: ${jblackQuantity} | Blue: ${jblueQuantity} | Yellow: ${jyellowQuantity}</p>
                 </div>
             `;
             outputDiv.appendChild(card);
