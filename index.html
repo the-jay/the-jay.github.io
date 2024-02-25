@@ -204,7 +204,7 @@ document.addEventListener("DOMContentLoaded", function() {
             let boxOsloObject = boxData.find(item => item.name === "Oslo");
 
             let packQuantity = packOsloObject ? packOsloObject.qty : 'N/A';
-            let boxQuantity = boxOsloObject ? boxOsloObject.qty : 'N/A';
+            let boxQuantity = boxOsloObject && product.set==3 ? boxOsloObject.qty : '';
             
             let colImages = images.filter(i => i.Color == product.color);
             
