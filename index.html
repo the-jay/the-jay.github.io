@@ -204,7 +204,7 @@ document.addEventListener("DOMContentLoaded", function() {
             let boxOsloObject = boxData.find(item => item.name === "Oslo");
 
             let packQuantity = packOsloObject ? packOsloObject.qty : 'N/A';
-            let boxQuantity = boxOsloObject && product.set==3 ? boxOsloObject.qty : '';
+            let boxQuantity = boxOsloObject && product.set==3 ? ' / '+boxOsloObject.qty : '';
             
             let colImages = images.filter(i => i.Color == product.color);
             
@@ -218,7 +218,7 @@ document.addEventListener("DOMContentLoaded", function() {
             card.innerHTML = `
             <img src="${product.image}" alt="${product.name}">
             <div class="card-text">
-                ${packQuantity} / ${boxQuantity}
+                ${packQuantity}${boxQuantity}
             </div>`;
             outputDiv.appendChild(card);
         })
