@@ -1,0 +1,310 @@
+[
+  {
+    "name": "George Washington",
+    "years_lived": "1732–1799",
+    "years_served": "1789–1797",
+    "wife": "Martha Washington",
+    "bio": "George Washington was the first President of the United States, serving from 1789 to 1797. He led the American Revolutionary War as the commander-in-chief of the Continental Army and is often referred to as the 'Father of His Country.'"
+  },
+  {
+    "name": "John Adams",
+    "years_lived": "1735–1826",
+    "years_served": "1797–1801",
+    "wife": "Abigail Adams",
+    "bio": "John Adams was the second President of the United States, serving from 1797 to 1801. He played a key role in the American Revolution and was a leading advocate for independence. Adams was also one of the Founding Fathers of the United States."
+  },
+  {
+    "name": "Thomas Jefferson",
+    "years_lived": "1743–1826",
+    "years_served": "1801–1809",
+    "wife": "Martha Wayles Skelton Jefferson",
+    "bio": "Thomas Jefferson was the third President of the United States, serving from 1801 to 1809. He was the principal author of the Declaration of Independence and is renowned as a champion of individual rights and freedoms. Jefferson also doubled the size of the country with the Louisiana Purchase."
+  },
+  {
+    "name": "James Madison",
+    "years_lived": "1751–1836",
+    "years_served": "1809–1817",
+    "wife": "Dolley Madison",
+    "bio": "James Madison was the fourth President of the United States, serving from 1809 to 1817. He played a pivotal role in the drafting of the U.S. Constitution and the Bill of Rights. Madison is often called the 'Father of the Constitution.'"
+  },
+  {
+    "name": "James Monroe",
+    "years_lived": "1758–1831",
+    "years_served": "1817–1825",
+    "wife": "Elizabeth Monroe",
+    "bio": "James Monroe was the fifth President of the United States, serving from 1817 to 1825. He is best known for the Monroe Doctrine, which asserted American dominance in the Western Hemisphere. Monroe's presidency was marked by the 'Era of Good Feelings.'"
+  },
+  {
+    "name": "John Quincy Adams",
+    "years_lived": "1767–1848",
+    "years_served": "1825–1829",
+    "wife": "Louisa Adams",
+    "bio": "John Quincy Adams was the sixth President of the United States, serving from 1825 to 1829. He was the son of John Adams, the second President. Adams is notable for his role in negotiating the Treaty of Ghent, which ended the War of 1812."
+  },
+  {
+    "name": "Andrew Jackson",
+    "years_lived": "1767–1845",
+    "years_served": "1829–1837",
+    "wife": "Rachel Jackson",
+    "bio": "Andrew Jackson was the seventh President of the United States, serving from 1829 to 1837. He was a polarizing figure known for his populist politics and his expansion of executive power. Jackson's presidency saw the forced relocation of Native American tribes in the Trail of Tears."
+  },
+  {
+    "name": "Martin Van Buren",
+    "years_lived": "1782–1862",
+    "years_served": "1837–1841",
+    "wife": "Hannah Van Buren",
+    "bio": "Martin Van Buren was the eighth President of the United States, serving from 1837 to 1841. He was the first president born after the United States had declared independence. Van Buren faced economic challenges during his presidency, including the Panic of 1837."
+  },
+  {
+    "name": "William Henry Harrison",
+    "years_lived": "1773–1841",
+    "years_served": "1841",
+    "wife": "Anna Harrison",
+    "bio": "William Henry Harrison was the ninth President of the United States, serving only for 31 days in 1841, the shortest tenure in U.S. presidential history. He died of pneumonia, making his presidency the briefest in American history."
+  },
+  {
+    "name": "John Tyler",
+    "years_lived": "1790–1862",
+    "years_served": "1841–1845",
+    "wife": "Letitia Tyler, Julia Gardiner Tyler",
+    "bio": "John Tyler was the tenth President of the United States, serving from 1841 to 1845. He assumed office following the death of President William Henry Harrison, becoming the first vice president to succeed to the presidency. Tyler's administration was marked by controversy, including his annexation of Texas."
+  },
+  {
+    "name": "James K. Polk",
+    "years_lived": "1795–1849",
+    "years_served": "1845–1849",
+    "wife": "Sarah Polk",
+    "bio": "James K. Polk was the eleventh President of the United States, serving from 1845 to 1849. He is known for his territorial expansion policies, including the annexation of Texas, the Oregon Territory, and the acquisition of California from Mexico after the Mexican-American War."
+  },
+  {
+    "name": "Zachary Taylor",
+    "years_lived": "1784–1850",
+    "years_served": "1849–1850",
+    "wife": "Margaret Taylor",
+    "bio": "Zachary Taylor was the twelfth President of the United States, serving from 1849 until his death in 1850. He was a career military officer and a national hero for his victories in the Mexican-American War. Taylor's brief presidency was marked by debates over the expansion of slavery."
+  },
+  {
+    "name": "Millard Fillmore",
+    "years_lived": "1800–1874",
+    "years_served": "1850–1853",
+    "wife": "Abigail Fillmore",
+    "bio": "Millard Fillmore was the thirteenth President of the United States, serving from 1850 to 1853. He assumed the presidency after the death of Zachary Taylor. Fillmore is best known for signing the Compromise of 1850, a series of legislative measures addressing the issue of slavery."
+  },
+  {
+    "name": "Franklin Pierce",
+    "years_lived": "1804–1869",
+    "years_served": "1853–1857",
+    "wife": "Jane Pierce",
+    "bio": "Franklin Pierce was the fourteenth President of the United States, serving from 1853 to 1857. His presidency was marked by the passage of the controversial Kansas-Nebraska Act, which heightened tensions over the issue of slavery and contributed to the onset of the Civil War."
+  },
+  {
+    "name": "James Buchanan",
+    "years_lived": "1791–1868",
+    "years_served": "1857–1861",
+    "wife": "None",
+    "bio": "James Buchanan was the fifteenth President of the United States, serving from 1857 to 1861. He faced numerous challenges during his presidency, including the secession of Southern states leading to the Civil War. Buchanan is often ranked as one of the worst presidents in U.S. history."
+  },
+  {
+    "name": "Abraham Lincoln",
+    "years_lived": "1809–1865",
+    "years_served": "1861–1865",
+    "wife": "Mary Todd Lincoln",
+    "bio": "Abraham Lincoln was the sixteenth President of the United States, serving from 1861 until his assassination in 1865. He led the nation through its Civil War, preserving the Union, abolishing slavery, and promoting economic and financial modernization."
+  },
+  {
+    "name": "Andrew Johnson",
+    "years_lived": "1808–1875",
+    "years_served": "1865–1869",
+    "wife": "Eliza McCardle Johnson",
+    "bio": "Andrew Johnson was the seventeenth President of the United States, serving from 1865 to 1869. He assumed the presidency after the assassination of Abraham Lincoln. Johnson's presidency was marked by conflict with Congress over Reconstruction policies."
+  },
+  {
+    "name": "Ulysses S. Grant",
+    "years_lived": "1822–1885",
+    "years_served": "1869–1877",
+    "wife": "Julia Grant",
+    "bio": "Ulysses S. Grant was the eighteenth President of the United States, serving from 1869 to 1877. He was a prominent Union general during the Civil War and played a crucial role in the defeat of the Confederacy. Grant's presidency was marked by Reconstruction efforts and efforts to combat corruption."
+  },
+  {
+    "name": "Rutherford B. Hayes",
+    "years_lived": "1822–1893",
+    "years_served": "1877–1881",
+    "wife": "Lucy Hayes",
+    "bio": "Rutherford B. Hayes was the nineteenth President of the United States, serving from 1877 to 1881. He became president after a disputed election and oversaw the end of Reconstruction. Hayes is known for his efforts to promote civil service reform and his advocacy for African American rights."
+  },
+  {
+    "name": "James A. Garfield",
+    "years_lived": "1831–1881",
+    "years_served": "1881",
+    "wife": "Lucretia Garfield",
+    "bio": "James A. Garfield was the twentieth President of the United States, serving only from March 4, 1881, until his death on September 19, 1881, after being shot by an assassin. Garfield's presidency was brief, and his administration is best known for its efforts to combat political corruption."
+  },
+  {
+    "name": "Chester A. Arthur",
+    "years_lived": "1829–1886",
+    "years_served": "1881–1885",
+    "wife": "Ellen Arthur",
+    "bio": "Chester A. Arthur was the twenty-first President of the United States, serving from 1881 to 1885. He assumed the presidency after the assassination of James A. Garfield. Arthur is known for his efforts to reform the civil service and his advocacy for civil rights."
+  },
+  {
+    "name": "Grover Cleveland",
+    "years_lived": "1837–1908",
+    "years_served": "1885–1889, 1893–1897",
+    "wife": "Frances Cleveland",
+    "bio": "Grover Cleveland was the twenty-second and twenty-fourth President of the United States, serving non-consecutive terms from 1885 to 1889 and from 1893 to 1897. He is the only president to serve two non-consecutive terms. Cleveland is known for his commitment to fiscal conservatism and his efforts to combat political corruption."
+  },
+  {
+    "name": "Benjamin Harrison",
+    "years_lived": "1833–1901",
+    "years_served": "1889–1893",
+    "wife": "Caroline Harrison",
+    "bio": "Benjamin Harrison was the twenty-third President of the United States, serving from 1889 to 1893. He was the grandson of President William Henry Harrison. Harrison's presidency was marked by economic prosperity and expansion of the U.S. Navy."
+  },
+  {
+    "name": "William McKinley",
+    "years_lived": "1843–1901",
+    "years_served": "1897–1901",
+    "wife": "Ida McKinley",
+    "bio": "William McKinley was the twenty-fifth President of the United States, serving from 1897 until his assassination in 1901. His presidency saw the Spanish-American War, during which the United States acquired territories in the Pacific and the Caribbean."
+  },
+  {
+    "name": "Theodore Roosevelt",
+    "years_lived": "1858–1919",
+    "years_served": "1901–1909",
+    "wife": "Edith Roosevelt",
+    "bio": "Theodore Roosevelt was the twenty-sixth President of the United States, serving from 1901 to 1909. He was a leading figure of the Progressive Era, known for his energetic personality, his efforts to regulate big business, and his conservationist policies, including the establishment of national parks."
+  },
+  {
+    "name": "William Howard Taft",
+    "years_lived": "1857–1930",
+    "years_served": "1909–1913",
+    "wife": "Helen Taft",
+    "bio": "William Howard Taft was the twenty-seventh President of the United States, serving from 1909 to 1913. He was also the tenth Chief Justice of the United States, serving from 1921 to 1930. Taft is the only person to have held both offices."
+  },
+  {
+    "name": "Woodrow Wilson",
+    "years_lived": "1856–1924",
+    "years_served": "1913–1921",
+    "wife": "Ellen Wilson, Edith Wilson",
+    "bio": "Woodrow Wilson was the twenty-eighth President of the United States, serving from 1913 to 1921. He led the country through World War I and played a key role in the creation of the League of Nations, a precursor to the United Nations. Wilson is often ranked as one of the greatest presidents in U.S. history."
+  },
+  {
+    "name": "Warren G. Harding",
+    "years_lived": "1865–1923",
+    "years_served": "1921–1923",
+    "wife": "Florence Harding",
+    "bio": "Warren G. Harding was the twenty-ninth President of the United States, serving from 1921 until his death in 1923. His presidency was marked by scandals, including the Teapot Dome scandal, which involved the improper leasing of federal oil reserves."
+  },
+  {
+    "name": "Calvin Coolidge",
+    "years_lived": "1872–1933",
+    "years_served": "1923–1929",
+    "wife": "Grace Coolidge",
+    "bio": "Calvin Coolidge was the thirtieth President of the United States, serving from 1923 to 1929. He is known for his advocacy of limited government and his conservative economic policies. Coolidge presided over a period of economic prosperity known as the 'Roaring Twenties.'"
+  },
+  {
+    "name": "Herbert Hoover",
+    "years_lived": "1874–1964",
+    "years_served": "1929–1933",
+    "wife": "Lou Henry Hoover",
+    "bio": "Herbert Hoover was the thirty-first President of the United States, serving from 1929 to 1933. He presided over the country during the onset of the Great Depression, and his administration's response to the economic crisis was criticized. Hoover was also known for his humanitarian efforts."
+  },
+  {
+    "name": "Franklin D. Roosevelt",
+    "years_lived": "1882–1945",
+    "years_served": "1933–1945",
+    "wife": "Eleanor Roosevelt",
+    "bio": "Franklin D. Roosevelt was the thirty-second President of the United States, serving from 1933 until his death in 1945. He led the country through the Great Depression and World War II, implementing the New Deal to combat economic hardship and providing strong leadership during the war."
+  },
+  {
+    "name": "Harry S. Truman",
+    "years_lived": "1884–1972",
+    "years_served": "1945–1953",
+    "wife": "Bess Truman",
+    "bio": "Harry S. Truman was the thirty-third President of the United States, serving from 1945 to 1953. He became president upon the death of Franklin D. Roosevelt. Truman is best known for his decision to use atomic bombs on Hiroshima and Nagasaki, effectively ending World War II."
+  },
+  {
+    "name": "Dwight D. Eisenhower",
+    "years_lived": "1890–1969",
+    "years_served": "1953–1961",
+    "wife": "Mamie Eisenhower",
+    "bio": "Dwight D. Eisenhower was the thirty-fourth President of the United States, serving from 1953 to 1961. He was a five-star general in the United States Army during World War II and served as Supreme Commander of the Allied Expeditionary Forces in Europe. Eisenhower is known for his leadership during the Cold War."
+  },
+  {
+    "name": "John F. Kennedy",
+    "years_lived": "1917–1963",
+    "years_served": "1961–1963",
+    "wife": "Jacqueline Kennedy Onassis",
+    "bio": "John F. Kennedy was the thirty-fifth President of the United States, serving from January 1961 until his assassination in November 1963. He was the youngest person ever to be elected to the presidency and the youngest to die in office. Kennedy's presidency was marked by the Cuban Missile Crisis and the beginning of the Space Race."
+  },
+  {
+    "name": "Lyndon B. Johnson",
+    "years_lived": "1908–1973",
+    "years_served": "1963–1969",
+    "wife": "Lady Bird Johnson",
+    "bio": "Lyndon B. Johnson was the thirty-sixth President of the United States, serving from 1963 to 1969. He assumed the presidency after the assassination of John F. Kennedy. Johnson's presidency saw the passage of landmark civil rights legislation and the escalation of the Vietnam War."
+  },
+  {
+    "name": "Richard Nixon",
+    "years_lived": "1913–1994",
+    "years_served": "1969–1974",
+    "wife": "Pat Nixon",
+    "bio": "Richard Nixon was the thirty-seventh President of the United States, serving from 1969 to 1974. He is the only president to resign from office, doing so in the wake of the Watergate scandal. Nixon's presidency also saw significant developments in U.S. foreign policy, including the opening of diplomatic relations with China."
+  },
+  {
+    "name": "Gerald Ford",
+    "years_lived": "1913–2006",
+    "years_served": "1974–1977",
+    "wife": "Betty Ford",
+    "bio": "Gerald Ford was the thirty-eighth President of the United States, serving from 1974 to 1977. He became president after the resignation of Richard Nixon. Ford's presidency was marked by efforts to heal divisions caused by the Watergate scandal and the Vietnam War."
+  },
+  {
+    "name": "Jimmy Carter",
+    "years_lived": "1924–",
+    "years_served": "1977–1981",
+    "wife": "Rosalynn Carter",
+    "bio": "Jimmy Carter was the thirty-ninth President of the United States, serving from 1977 to 1981. He is a Nobel Peace Prize laureate, honored for his efforts to promote peace and human rights. Carter's presidency faced challenges including the Iran hostage crisis and economic difficulties."
+  },
+  {
+    "name": "Ronald Reagan",
+    "years_lived": "1911–2004",
+    "years_served": "1981–1989",
+    "wife": "Nancy Reagan",
+    "bio": "Ronald Reagan was the fortieth President of the United States, serving from 1981 to 1989. He was a former actor and governor of California. Reagan's presidency saw a renewed emphasis on conservative economic policies and a significant military buildup, as well as improved relations with the Soviet Union."
+  },
+  {
+    "name": "George H. W. Bush",
+    "years_lived": "1924–2018",
+    "years_served": "1989–1993",
+    "wife": "Barbara Bush",
+    "bio": "George H. W. Bush was the forty-first President of the United States, serving from 1989 to 1993. He was a veteran of World War II and a former CIA director. Bush's presidency saw the end of the Cold War and the Gulf War."
+  },
+  {
+    "name": "Bill Clinton",
+    "years_lived": "1946–",
+    "years_served": "1993–2001",
+    "wife": "Hillary Clinton",
+    "bio": "Bill Clinton was the forty-second President of the United States, serving from 1993 to 2001. He is known for his centrist policies, presiding over a period of economic prosperity and budget surpluses. Clinton's presidency was also marked by controversies, including his impeachment by the House of Representatives."
+  },
+  {
+    "name": "George W. Bush",
+    "years_lived": "1946–",
+    "years_served": "2001–2009",
+    "wife": "Laura Bush",
+    "bio": "George W. Bush was the forty-third President of the United States, serving from 2001 to 2009. He was the son of George H. W. Bush, the forty-first president. Bush's presidency was marked by the September 11 terrorist attacks and the subsequent wars in Afghanistan and Iraq."
+  },
+  {
+    "name": "Barack Obama",
+    "years_lived": "1961–",
+    "years_served": "2009–2017",
+    "wife": "Michelle Obama",
+    "bio": "Barack Obama was the forty-fourth President of the United States, serving from 2009 to 2017. He was the first African American to hold the presidency. Obama's presidency was marked by the passage of the Affordable Care Act and efforts to address climate change and economic inequality."
+  },
+  {
+    "name": "Donald Trump",
+    "years_lived": "1946–",
+    "years_served": "2017–2021",
+    "wife": "Melania Trump",
+    "bio": "Donald Trump was the forty-fifth President of the United States, serving from 2017 to 2021. He was a businessman and television personality before entering politics. Trump's presidency was marked by a focus on immigration reform, trade policies, and a tumultuous relationship with the media and political establishment."
+  }
+]
