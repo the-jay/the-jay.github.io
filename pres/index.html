@@ -33,7 +33,7 @@
     <script>
         function fetchPresidentImage(presidentName) {
             const formattedPresidentName = presidentName.replace(/\s/g, '_');
-            const apiUrl = `https://commons.wikimedia.org/w/api.php?action=query&format=json&prop=imageinfo&titles=File:${formattedPresidentName}&iiprop=url`;
+            const apiUrl = `https://corsproxy.io/?https://commons.wikimedia.org/w/api.php?action=query&format=json&prop=imageinfo&titles=File:${formattedPresidentName}&iiprop=url`;
 
             fetch(apiUrl)
                 .then(response => response.json())
