@@ -139,8 +139,9 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     let trovePrice;
+    const randomTrove = '_' + (Math.random() + 1).toString(36).substring(7);
     // URL of the webpage you want to scrape
-const troveurl = 'https://www.outland.no/p-into-the-inklands-illumineers-trove-pack-lorcana-tcg-lorcana-tcg-disney-4050368982926';
+const troveurl = 'https://corsproxy.io/?https://www.outland.no/p-into-the-inklands-illumineers-trove-pack-lorcana-tcg-lorcana-tcg-disney-4050368982926&_='+randomTrove;
 
 // Fetch the webpage content
 fetch(troveurl)
