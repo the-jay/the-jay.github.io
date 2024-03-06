@@ -60,10 +60,11 @@
   
   span {
     display:inline-block;
-    text-shadow: 0px 0px 6px white;
+    text-shadow: 0px 0px 6px black;
   }
   .black {
     color:rgb(0, 0, 0);
+    text-shadow: 0px 0px 4px white;
   }
 
     .purple {
@@ -181,8 +182,8 @@ document.addEventListener("DOMContentLoaded", function() {
             card.innerHTML = `
             <img src="${product.image}" alt="${product.name}">
             <div class="card-text">
-                <span class="black">${yellowQuantity}</span> / <span class="purple">${blueQuantity}</span> / <span class="yellow">${blackQuantity}</span></br>
-                <span class="black">${jyellowQuantity}</span> / <span class="purple">${jblueQuantity}</span> / <span class="yellow">${jblackQuantity}</span>
+                <span class="yellow">${yellowQuantity}</span> / <span class="purple">${blueQuantity}</span> / <span class="black">${blackQuantity}</span></br>
+                <span class="yellow">${jyellowQuantity}</span> / <span class="purple">${jblueQuantity}</span> / <span class="black">${jblackQuantity}</span>
             </div>
             `;
             outputDiv.appendChild(card);
