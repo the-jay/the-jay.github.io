@@ -239,14 +239,14 @@ Replace 'https://example.com' with the actual URL of the webpage you want to scr
             // Choose a random image
             let randomIndex = Math.floor(Math.random() * colImages.length);
             let imageUrl = colImages[randomIndex].Image;
-
+            let trove = trovePrice && product.set==3 ? ' / '+trovePrice : '';
             // Create a card element
             const card = document.createElement("div");
             card.classList.add("card");
             card.innerHTML = `
             <img src="${product.image}" alt="${product.name}">
             <div class="card-text">
-                ${packQuantity}${trovePrice?trovePrize:boxQuantity}
+                ${packQuantity}${boxQuantity}${trove}
             </div>`;
             outputDiv.appendChild(card);
         })
