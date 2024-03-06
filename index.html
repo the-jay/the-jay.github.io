@@ -140,10 +140,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
     let trovePrice;
     // URL of the webpage you want to scrape
-const url = 'https://www.outland.no/p-into-the-inklands-illumineers-trove-pack-lorcana-tcg-lorcana-tcg-disney-4050368982926';
+const troveurl = 'https://www.outland.no/p-into-the-inklands-illumineers-trove-pack-lorcana-tcg-lorcana-tcg-disney-4050368982926';
 
 // Fetch the webpage content
-fetch(url)
+fetch(troveurl)
   .then(response => response.text())
   .then(html => {
     // Parse the HTML
@@ -163,7 +163,6 @@ fetch(url)
   })
   .catch(error => console.error('Error fetching webpage:', error));
 
-Replace 'https://example.com' with the actual URL of the webpage you want to scrape. Thi
 
     function loadProduct(product) {
         const outputDiv = document.getElementById("output");
