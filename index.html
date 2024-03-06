@@ -188,13 +188,13 @@ fetch(troveurl)
             let jblueObject = blueData.find(item => item.name === "Jessheim");
             let jyellowObject = yellowData.find(item => item.name === "Jessheim");
 
-            let blackQuantity = blackObject ? blackObject.qty.padStart(2, '0') : 'N/A';
-            let blueQuantity = blueObject ? blueObject.qty.padStart(2, '0') : 'N/A';
-            let yellowQuantity = yellowObject ? yellowObject.qty.padStart(2, '0') : 'N/A';
+            let blackQuantity = blackObject ? blackObject.qty.toString().padStart(2, '0') : 'N/A';
+            let blueQuantity = blueObject ? blueObject.qty.toString().padStart(2, '0') : 'N/A';
+            let yellowQuantity = yellowObject ? yellowObject.qty.toString().padStart(2, '0') : 'N/A';
 
-            let jblackQuantity = jblackObject ? jblackObject.qty.padStart(2, '0') : 'N/A';
-            let jblueQuantity = jblueObject ? jblueObject.qty.padStart(2, '0') : 'N/A';
-            let jyellowQuantity = jyellowObject ? jyellowObject.qty.padStart(2, '0') : 'N/A';
+            let jblackQuantity = jblackObject ? jblackObject.qty.toString().padStart(2, '0') : 'N/A';
+            let jblueQuantity = jblueObject ? jblueObject.qty.toString().padStart(2, '0') : 'N/A';
+            let jyellowQuantity = jyellowObject ? jyellowObject.qty.toString().padStart(2, '0') : 'N/A';
 
             
             let colImages = images.filter(i => i.Color == product.color);
