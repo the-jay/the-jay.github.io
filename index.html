@@ -180,9 +180,9 @@ fetch(troveurl)
             fetch(yellowUrl).then(response => response.json())
         ])
         .then(([blackData, blueData, yellowData]) => {
-            let blackObject = blackData.find(item => item.name === "Oslo");
-            let blueObject = blueData.find(item => item.name === "Oslo");
-            let yellowObject = yellowData.find(item => item.name === "Oslo");
+            let blackObject = blackData.find(item => item.name === "Oslo, Grensen");
+            let blueObject = blueData.find(item => item.name === "Oslo, Grensen");
+            let yellowObject = yellowData.find(item => item.name === "Oslo, Grensen");
             
             let jblackObject = blackData.find(item => item.name === "Jessheim");
             let jblueObject = blueData.find(item => item.name === "Jessheim");
@@ -228,8 +228,8 @@ fetch(troveurl)
             fetch(boxUrl).then(response => response.json())
         ])
         .then(([packData, boxData]) => {
-            const packOsloObject = packData.find(item => item.name === "Oslo");
-            let boxOsloObject = boxData.find(item => item.name === "Oslo");
+            const packOsloObject = packData.find(item => item.name === "Oslo, Grensen");
+            let boxOsloObject = boxData.find(item => item.name === "Oslo, Grensen");
 
             let packQuantity = packOsloObject ? packOsloObject.qty : 'N/A';
             let boxQuantity = boxOsloObject && product.set==3 ? ' / '+boxOsloObject.qty : '';
