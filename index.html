@@ -109,11 +109,29 @@ document.addEventListener("DOMContentLoaded", function() {
             color: 'Amber'
         },
         {
+            name: 'Ursulas Return',
+            image: 'set3.png',
+            pack: 700850,
+            box: 675370, //675394,
+            set: 4,
+            color: 'Amber'
+        },
+        {
+            name: 'Shimmering Skies',
+            image: 'set3.png',
+            pack: 715931,
+            box: 675370, //675394,
+            set: 5,
+            color: 'Amber'
+        },
+        {
             name: 'Dragon Shield',
             image: 'dragonblack.png',
             black: 68282,
-            blue: 33235,
+            purple: 68288,
+            blue: 364310,
             yellow: 33232,
+            pink:171530,
             color: 'Steel'
         }
     ];
@@ -173,28 +191,40 @@ fetch(troveurl)
             const blackUrl = `https://corsproxy.io/?https://www.outland.no/rest/V1/clickandcollect/storesInfo?productId=${product.black}&_=${randomString}`;
             const blueUrl = `https://corsproxy.io/?https://www.outland.no/rest/V1/clickandcollect/storesInfo?productId=${product.blue}&_=${randomString}`;
             const yellowUrl = `https://corsproxy.io/?https://www.outland.no/rest/V1/clickandcollect/storesInfo?productId=${product.yellow}&_=${randomString}`;
+            const purpleUrl = `https://corsproxy.io/?https://www.outland.no/rest/V1/clickandcollect/storesInfo?productId=${product.purple}&_=${randomString}`;
+            const pinkUrl = `https://corsproxy.io/?https://www.outland.no/rest/V1/clickandcollect/storesInfo?productId=${product.pink}&_=${randomString}`;
 
         Promise.all([
             fetch(blackUrl).then(response => response.json()),
             fetch(blueUrl).then(response => response.json()),
-            fetch(yellowUrl).then(response => response.json())
+            fetch(yellowUrl).then(response => response.json()),
+            fetch(purpleUrl).then(response => response.json()),
+            fetch(pinkUrl).then(response => response.json())
         ])
         .then(([blackData, blueData, yellowData]) => {
             let blackObject = blackData.find(item => item.name === "Oslo, Grensen");
             let blueObject = blueData.find(item => item.name === "Oslo, Grensen");
             let yellowObject = yellowData.find(item => item.name === "Oslo, Grensen");
+            let purpleObject = purpleData.find(item => item.name === "Oslo, Grensen");
+            let pinkObject = pinkData.find(item => item.name === "Oslo, Grensen");
             
             let jblackObject = blackData.find(item => item.name === "Jessheim");
             let jblueObject = blueData.find(item => item.name === "Jessheim");
             let jyellowObject = yellowData.find(item => item.name === "Jessheim");
+            let jpurpleObject = purpleData.find(item => item.name === "Jessheim");
+            let jpinkObject = pinkData.find(item => item.name === "Jessheim");
 
             let blackQuantity = blackObject ? blackObject.qty.toString().padStart(2, '0') : 'N/A';
             let blueQuantity = blueObject ? blueObject.qty.toString().padStart(2, '0') : 'N/A';
             let yellowQuantity = yellowObject ? yellowObject.qty.toString().padStart(2, '0') : 'N/A';
+            let purpleQuantity = purpleObject ? purpleObject.qty.toString().padStart(2, '0') : 'N/A';
+            let pinkQuantity = pinkObject ? pinkObject.qty.toString().padStart(2, '0') : 'N/A';
 
             let jblackQuantity = jblackObject ? jblackObject.qty.toString().padStart(2, '0') : 'N/A';
             let jblueQuantity = jblueObject ? jblueObject.qty.toString().padStart(2, '0') : 'N/A';
             let jyellowQuantity = jyellowObject ? jyellowObject.qty.toString().padStart(2, '0') : 'N/A';
+            let jpurpleQuantity = jpurpleObject ? jpurpleObject.qty.toString().padStart(2, '0') : 'N/A';
+            let jpinkQuantity = jpinkObject ? jpinkObject.qty.toString().padStart(2, '0') : 'N/A';
 
             
             let colImages = images.filter(i => i.Color == product.color);
@@ -209,8 +239,8 @@ fetch(troveurl)
             card.innerHTML = `
             <img src="${product.image}" alt="${product.name}">
             <div class="card-text">
-                <span class="yellow">${yellowQuantity}</span> / <span class="purple">${blueQuantity}</span> / <span class="black">${blackQuantity}</span></br>
-                <span class="yellow">${jyellowQuantity}</span> / <span class="purple">${jblueQuantity}</span> / <span class="black">${jblackQuantity}</span>
+                <span class="yellow">${yellowQuantity}</span> / <span class="purple">${blueQuantity}</span> / <span class="black">${blackQuantity}</span> / <span class="purple">${purpleQuantity}</span> / <span class="black">${pinkQuantity}</span></br>
+                <span class="yellow">${jyellowQuantity}</span> / <span class="purple">${jblueQuantity}</span> / <span class="black">${jblackQuantity}</span> / <span class="purple">${jpurpleQuantity}</span> / <span class="black">${jpinkQuantity}</span></br>
             </div>
             `;
             outputDiv.appendChild(card);
