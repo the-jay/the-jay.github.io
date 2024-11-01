@@ -209,7 +209,7 @@ fetch(troveurl)
             fetch(purpleUrl).then(response => response.json()),
             fetch(pinkUrl).then(response => response.json())
         ])
-        .then(([blackData, blueData, yellowData]) => {
+        .then(([blackData, blueData, yellowData, purpleData, pinkDate]) => {
             let blackObject = blackData.find(item => item.name === "Oslo, Grensen");
             let blueObject = blueData.find(item => item.name === "Oslo, Grensen");
             let yellowObject = yellowData.find(item => item.name === "Oslo, Grensen");
