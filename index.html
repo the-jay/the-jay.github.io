@@ -34,7 +34,8 @@
   
   .card {
     position: relative;
-    width: 300px;
+    width: 100%;
+    height:4em;
     margin: 20px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -256,7 +257,6 @@ fetch(troveurl)
             const card = document.createElement("div");
             card.classList.add("card");
             card.innerHTML = `
-            <img src="${product.image}" alt="${product.name}">
             <div class="card-text">
                 <span class="yellow">${yellowQuantity}</span> / <span class="blue">${blueQuantity}</span> / <span class="black">${blackQuantity}</span> / <span class="purple">${purpleQuantity}</span> / <span class="pink">${pinkQuantity}</span> / <span class="petrol">${petrolQuantity}</span></br>
                 <span class="yellow">${jyellowQuantity}</span> / <span class="blue">${jblueQuantity}</span> / <span class="black">${jblackQuantity}</span> / <span class="purple">${jpurpleQuantity}</span> / <span class="pink">${jpinkQuantity}</span> / <span class="petrol">${jpetrolQuantity}</span>
