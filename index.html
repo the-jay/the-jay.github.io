@@ -270,17 +270,16 @@ fetch(troveurl)
         }
         else{
         const packUrl = `https://corsproxy.io/?https://www.outland.no/rest/V1/clickandcollect/storesInfo?productId=${product.pack}&_=${randomString}`;
-        const boxUrl = `https://corsproxy.io/?https://www.outland.no/rest/V1/clickandcollect/storesInfo?productId=${product.box}&_=${randomString}`;
 
         Promise.all([
-            fetch(packUrl).then(response => response.json()),
-            fetch(boxUrl).then(response => response.json())
+            fetch(packUrl).then(response => response.json())
         ])
         .then(([packData, boxData]) => {
             const packOsloObject = packData.find(item => item.name === "Oslo, Grensen");
-            let boxOsloObject = boxData.find(item => item.name === "Oslo, Grensen");
+            const packJessObject = packData.find(item => item.name === "Jessheim");
 
             let packQuantity = packOsloObject ? packOsloObject.qty : 'N/A';
+            let jpackQuantity = packJessObject ? packJessObject.qty : 'N/A';
             
             let colImages = images.filter(i => i.Color == product.color);
             
@@ -291,9 +290,9 @@ fetch(troveurl)
             const card = document.createElement("div");
             card.classList.add("card");
             card.innerHTML = `
-            <img src="${product.image}" alt="${product.name}">
             <div class="card-text">
-                ${packQuantity}
+            ${product.name}</br>
+                Oslo: ${packQuantity} Jessheim: ${jpackQuantity}
             </div>`;
             outputDiv.appendChild(card);
         })
