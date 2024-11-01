@@ -75,6 +75,14 @@
   color:rgb(245, 191, 44);
 }
 
+    .pink {
+    color:rgb(255, 0, 127);
+}
+
+.blue {
+  color:rgb(0, 154, 255);
+}
+
 </style>
 </head>
 <body>
@@ -239,8 +247,8 @@ fetch(troveurl)
             card.innerHTML = `
             <img src="${product.image}" alt="${product.name}">
             <div class="card-text">
-                <span class="yellow">${yellowQuantity}</span> / <span class="purple">${blueQuantity}</span> / <span class="black">${blackQuantity}</span> / <span class="purple">${purpleQuantity}</span> / <span class="black">${pinkQuantity}</span></br>
-                <span class="yellow">${jyellowQuantity}</span> / <span class="purple">${jblueQuantity}</span> / <span class="black">${jblackQuantity}</span> / <span class="purple">${jpurpleQuantity}</span> / <span class="black">${jpinkQuantity}</span></br>
+                <span class="yellow">${yellowQuantity}</span> / <span class="blue">${blueQuantity}</span> / <span class="black">${blackQuantity}</span> / <span class="purple">${purpleQuantity}</span> / <span class="pink">${pinkQuantity}</span></br>
+                <span class="yellow">${jyellowQuantity}</span> / <span class="blue">${jblueQuantity}</span> / <span class="black">${jblackQuantity}</span> / <span class="purple">${jpurpleQuantity}</span> / <span class="pink">${jpinkQuantity}</span>
             </div>
             `;
             outputDiv.appendChild(card);
