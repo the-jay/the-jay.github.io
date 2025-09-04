@@ -306,5 +306,12 @@
     "years_served": "2017–2021",
     "wife": "Melania Trump",
     "bio": "Donald Trump was the forty-fifth President of the United States, serving from 2017 to 2021. He was a businessman and television personality before entering politics. Trump's presidency was marked by a focus on immigration reform, trade policies, and a tumultuous relationship with the media and political establishment."
+  },
+  {
+    "name": "Joe Biden",
+    "years_lived": "1942–",
+    "years_served": "2021–",
+    "wife": "Jill Biden",
+    "bio": "Joseph R. Biden Jr. is the forty-sixth President of the United States, serving since 2021. He previously served as vice president under Barack Obama and represented Delaware in the U.S. Senate for 36 years."
   }
 ]
