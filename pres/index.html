@@ -1,59 +1,117 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random US President Facts</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-        }
-        h1 {
-            margin-bottom: 20px;
-        }
-        #president-info {
-            margin-top: 50px;
-            font-size:24px;
-            max-width:500px;
-  margin: auto;
-        }
-        #president-img {
-            max-width: 300px;
-            margin: 20px auto;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>US Presidents</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      margin-bottom: 20px;
+    }
+    #card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      padding: 15px;
+      margin: 10px;
+      flex: 1 0 calc(25% - 20px);
+      box-sizing: border-box;
+      cursor: pointer;
+      transition: transform 0.2s ease-in-out;
+    }
+    .card:hover {
+      transform: scale(1.02);
+    }
+    .card img {
+      max-width: 100%;
+      border-radius: 4px;
+    }
+    .card h2 {
+      font-size: 1.2em;
+      margin: 10px 0 5px;
+    }
+    .details {
+      display: none;
+      text-align: left;
+      margin-top: 10px;
+    }
+    .card.expanded .details {
+      display: block;
+    }
+    .details p {
+      margin: 5px 0;
+      font-size: 0.9em;
+    }
+  </style>
 </head>
 <body>
-    <div id="president-info">
-        <p>Loading...</p>
-    </div>
-    <script>
+  <h1>US Presidents</h1>
+  <div id="card-container"></div>
+  <script>
+    async function fetchPresidentImage(name) {
+      const title = encodeURIComponent(name);
+      const url = `https://en.wikipedia.org/w/api.php?action=query&origin=*&format=json&prop=pageimages&pithumbsize=200&titles=${title}`;
+      const response = await fetch(url);
+      const data = await response.json();
+      const pages = data.query.pages;
+      const page = pages[Object.keys(pages)[0]];
+      return page.thumbnail ? page.thumbnail.source : '';
+    }
 
-        function displayRandomPresident() {
-            fetch('us_presidents.json')
-                .then(response => response.json())
-                .then(data => {
-                    const randomIndex = Math.floor(Math.random() * data.length);
-                    const president = data[randomIndex];
-                    const presidentInfo = `
-                        <h2>${president.name}</h2>
-                        <p>Years Served: ${president.years_served}</p>
-                        <p>Wife: ${president.wife}</p>
-                        <p>Bio: ${president.bio}</p>
-                    `;
-                    document.getElementById('president-info').innerHTML = presidentInfo;
+    async function displayPresidents() {
+      const response = await fetch('presidents.json');
+      const data = await response.json();
+      data.sort((a, b) => parseInt(a.years_served.split('–')[0]) - parseInt(b.years_served.split('–')[0]));
+      const container = document.getElementById('card-container');
 
-                })
-                .catch(error => console.error('Error fetching data:', error));
+      for (const pres of data) {
+        const card = document.createElement('div');
+        card.className = 'card';
+
+        const imgUrl = await fetchPresidentImage(pres.name);
+        if (imgUrl) {
+          const img = document.createElement('img');
+          img.src = imgUrl;
+          img.alt = pres.name;
+          img.loading = 'lazy';
+          card.appendChild(img);
         }
 
-        // Call function on page load
-        displayRandomPresident();
-    </script>
+        const title = document.createElement('h2');
+        title.textContent = pres.name;
+        card.appendChild(title);
+
+        const details = document.createElement('div');
+        details.className = 'details';
+        details.innerHTML = `
+          <p><strong>Years Served:</strong> ${pres.years_served}</p>
+          <p><strong>Spouse:</strong> ${pres.wife}</p>
+          <p>${pres.bio}</p>
+        `;
+        card.appendChild(details);
+
+        card.addEventListener('click', () => {
+          card.classList.toggle('expanded');
+        });
+
+        container.appendChild(card);
+      }
+    }
+
+    displayPresidents();
+  </script>
 </body>
 </html>
